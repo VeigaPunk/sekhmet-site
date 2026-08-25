@@ -5,7 +5,7 @@
   --bg-card: #16120f;
   --fg: #f3ece4;
   --muted: #a89a8a;
-  --subtle: #6f6358;
+  --subtle: #94877a;
   --border: #2a231c;
   --border-strong: #3d3228;
   --accent: #c4783a;
@@ -13,8 +13,8 @@
   --solar: #e8b86d;
   --high: #5a8f6e;
   --moderate: #c4783a;
-  --contested: #b54a3a;
-  --danger: #b54a3a;
+  --contested: #c45e4a;
+  --danger: #c45e4a;
   --heal: #5a8f6e;
   --font-display: "Cormorant Garamond", Georgia, serif;
   --font-body: "Source Sans 3", system-ui, sans-serif;
@@ -63,6 +63,20 @@ a {
 
 a:hover {
   color: var(--solar);
+}
+
+a:focus-visible,
+button:focus-visible,
+.btn:focus-visible,
+.site-nav a:focus-visible,
+.mobile-nav a:focus-visible {
+  outline: 2px solid var(--accent-soft);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.nav-toggle:focus-visible {
+  outline-offset: 3px;
 }
 
 .skip {
@@ -192,12 +206,21 @@ a:hover {
   color: var(--fg);
 }
 
-@media (min-width: 1100px) {
+@media (min-width: 1000px) {
   .site-nav {
     display: flex;
   }
+  .site-nav a {
+    padding: 0.4rem 0.55rem;
+  }
   .nav-toggle {
     display: none;
+  }
+}
+
+@media (min-width: 1200px) {
+  .site-nav a {
+    padding: 0.4rem 0.7rem;
   }
 }
 
@@ -252,8 +275,8 @@ a:hover {
 .hero h1 {
   margin: 0;
   font-family: var(--font-display);
-  font-size: clamp(3rem, 9vw, 5.25rem);
-  line-height: 0.95;
+  font-size: clamp(2.25rem, 9vw, 5.25rem);
+  line-height: 1;
   letter-spacing: -0.02em;
   font-weight: 500;
 }
@@ -391,7 +414,7 @@ a:hover {
     grid-template-columns: 1fr 1fr;
   }
   .grid-3 {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
   .grid-4 {
     grid-template-columns: repeat(2, 1fr);
@@ -399,6 +422,9 @@ a:hover {
 }
 
 @media (min-width: 1000px) {
+  .grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
   .grid-4 {
     grid-template-columns: repeat(4, 1fr);
   }
@@ -434,7 +460,13 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
   gap: 0.75rem;
+}
+
+.card-head h3 {
+  overflow-wrap: break-word;
+  min-width: 0;
 }
 
 .legend-row {
@@ -920,4 +952,23 @@ a:hover {
   color: var(--muted);
   max-width: 28rem;
   font-size: 0.9rem;
+}
+
+.mt-section {
+  margin-top: 1.5rem;
+}
+
+@media (max-width: 480px) {
+  .hero-portrait {
+    width: 100%;
+  }
+  .card {
+    padding: 1.25rem 1rem;
+  }
+  .myth-body {
+    padding: 1.25rem 1rem;
+  }
+  .pull {
+    padding: 1.25rem 1rem;
+  }
 }

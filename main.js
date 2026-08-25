@@ -18,7 +18,16 @@
     }
   };
 
-  window.addEventListener("scroll", onScroll, { passive: true });
+  let ticking = false;
+  window.addEventListener("scroll", () => {
+    if (!ticking) {
+      ticking = true;
+      requestAnimationFrame(() => {
+        onScroll();
+        ticking = false;
+      });
+    }
+  }, { passive: true });
   onScroll();
 
   if (toggle && mobile) {
