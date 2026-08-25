@@ -13,8 +13,8 @@
   --solar: #e8b86d;
   --high: #5a8f6e;
   --moderate: #c4783a;
-  --contested: #c45e4a;
-  --danger: #c45e4a;
+  --contested: #d4715c;
+  --danger: #d4715c;
   --heal: #5a8f6e;
   --font-display: "Cormorant Garamond", Georgia, serif;
   --font-body: "Source Sans 3", system-ui, sans-serif;
@@ -214,6 +214,9 @@ button:focus-visible,
     padding: 0.4rem 0.55rem;
   }
   .nav-toggle {
+    display: none;
+  }
+  .mobile-nav {
     display: none;
   }
 }
